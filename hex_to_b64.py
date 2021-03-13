@@ -32,11 +32,11 @@ def b64_encode(_hex: str):
         for j in range(0, 3, 1):
 
             # get ASCII code of the next character in line
-            n = ord(_hex[i])
+            ascii_value = ord(_hex[i])
             i += 1
 
             # Concatenate the three characters together
-            b += n << 8 * (2 - j)
+            b += ascii_value << 8 * (2 - j)
 
         # Convert the 3 chars to four Base64 chars
         base64 += base64chars[(b >> 18) & 63]
