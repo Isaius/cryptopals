@@ -1,9 +1,6 @@
 import codecs
 
-def fixed_XOR(str1: str, str2: str):
-  a_buffer = bytes.fromhex(str1)
-  b_buffer = bytes.fromhex(str2)
-
+def fixed_XOR(a_buffer: bytes, b_buffer: bytes):
   # Inputs must have the same size
   if len(a_buffer) != len(b_buffer):
     raise 'No matching size of inputs'

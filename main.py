@@ -14,10 +14,17 @@ print(f"Easy way #1: {b64}")
 # Easy way #2
 print(f"Easy way #2: {base64.b64encode(codecs.decode(_hex, 'hex'))}")
 
-print(f"Hard way #1: {b64_encode(_hex)}")
+print(f"Hard way #1: {b64_encode(_hex)}\n\n")
 
 input1 = '1c0111001f010100061a024b53535009181c'
 input2 = '686974207468652062756c6c277320657965'
 
-result = fixed_XOR(input1, input2)
-print(result)
+a_buffer = bytes.fromhex(input1)
+b_buffer = bytes.fromhex(input2)
+
+result = fixed_XOR(a_buffer, b_buffer)
+print(f"fixed xor: {result}\n\n")
+
+stanza = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
+output = repeating_key(stanza, 'ICE')
+print(f"repeating key: {output}\n\n")
