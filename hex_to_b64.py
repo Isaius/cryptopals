@@ -1,16 +1,6 @@
 import codecs
 import base64
 
-_hex = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
-
-# Easy way #1
-b64 = codecs.encode(codecs.decode(_hex, "hex"), "base64")
-print(f"Easy way #1: {b64}")
-
-# Easy way #2
-print(f"Easy way #2: {base64.b64encode(codecs.decode(_hex, 'hex'))}")
-
-# Hard way #1
 def b64_encode(_hex: str):
     _hex = codecs.decode(_hex, "hex").decode()
 
@@ -49,6 +39,3 @@ def b64_encode(_hex: str):
         base64 = base64[:-pad]
         base64 += ending
     return base64.encode()
-
-
-print(f"Hard way #1: {b64_encode(_hex)}")
