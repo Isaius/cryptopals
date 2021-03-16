@@ -6,7 +6,8 @@ def repeating_key(plaintext: str, key: str):
   result = "".encode()
 
   for b in plaintext:
-    result += fixed_XOR(b.encode(), key[next_key(key, index)].encode())
+    index = next_key(key, index)
+    result += fixed_XOR(b.encode(), key[index].encode())
 
   return result
 
