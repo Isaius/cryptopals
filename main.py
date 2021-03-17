@@ -28,3 +28,6 @@ print(f"fixed xor: {result}\n\n")
 stanza = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
 output = repeating_key(stanza, 'ICE')
 print(f"repeating key: {output}\n\n")
+
+distance = hamming_distance('this is a test', 'wokka wokka!!!')
+print(f"hamming distance: {distance}")
