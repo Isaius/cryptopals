@@ -1,7 +1,10 @@
 ## To test functions
-from codecrypto import *
 import codecs
 import base64
+
+from codecrypto import *
+from inputs import *
+from helpers import *
 
 ## MAIN PROGRAM
 _hex = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
@@ -31,3 +34,12 @@ print(f"repeating key: {output}\n\n")
 
 distance = hamming_distance('this is a test', 'wokka wokka!!!')
 print(f"hamming distance: {distance}")
+
+file_input = set6_input()
+
+encrypted_input = ''.join(i for i in file_input)
+bytes_input = b64_to_bytes(encrypted_input)
+
+print(bytes_input.decode('utf-8'))
+
+break_repeation_xor(bytes_input)
