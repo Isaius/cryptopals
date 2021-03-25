@@ -1,7 +1,7 @@
 import codecs
 
 
-def b64_encode(_hex: str):
+def b64_encode(_hex):
     _hex = codecs.decode(_hex, "hex").decode()
 
     i = 0

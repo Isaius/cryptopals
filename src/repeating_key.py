@@ -1,14 +1,13 @@
 from src.fixed_XOR import fixed_XOR
 
 
-def repeating_key(plaintext: str, key: str):
+def repeating_key(plaintext, key):
     index = -1
-    result = "".encode()
+    result = b""
 
-    for b in plaintext:
+    for char in plaintext:
         index = next_key(key, index)
-        result += fixed_XOR(b.encode(), key[index].encode())
-
+        result += fixed_XOR(char.encode(), key[index].encode())
     return result
 
 

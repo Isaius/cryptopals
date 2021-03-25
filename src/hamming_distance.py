@@ -10,7 +10,6 @@ def hamming_distance(str1: str, str2: str):
     for (a, b) in zip(a_bits, b_bits):
         if a != b:
             diff_counter += 1
-
     return diff_counter
 
 
@@ -19,5 +18,4 @@ def ascii_to_bin(item):
 
     for i in item:
         result += format(i, "08b")
-
     return result

@@ -55,7 +55,6 @@ def transpose_blocks(blocks):
             # Each i-th byte of all blocks make the transposed block
             for block in blocks:
                 transp_block.append(block[i])
-
             tranposed_blocks.append(transp_block)
         except (IndexError, KeyError):
             tranposed_blocks.append("0".encode())
