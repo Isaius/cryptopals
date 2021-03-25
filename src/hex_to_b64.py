@@ -1,5 +1,5 @@
 import codecs
-import base64
+
 
 def b64_encode(_hex: str):
     _hex = codecs.decode(_hex, "hex").decode()
